@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 //Start DB
-mongoose.connect('mongodb://admin:jnjfnreilughp989u0exwdw@ds157325.mlab.com:57325/dndclack', { useNewUrlParser: true });
+mongoose.connect('mongodb://admin:admin@ds157325.mlab.com:57325/dndclack', { useNewUrlParser: true });
 mongoose.set('useFindAndModify', false);
 let database = mongoose.connection;
 
