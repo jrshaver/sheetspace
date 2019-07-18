@@ -1,0 +1,95 @@
+<div class="section">
+    <!--Basic Info-->
+    <div class="card" id="info">
+        <div class="row">
+            <div class="col-sm-3" style="text-align:center">
+                <img src="images/KenkuWizard.jpeg" style="width:135px">
+            </div>
+            <div class="col-sm-9">
+                <label for="name">Name: </label>
+                <input class="form-control" id="name" ng-model="character.info.name">
+            </div>
+            <div class="col-sm-3">
+                <label for="name">Race:</label>
+                <input class="form-control" id="name" ng-model="character.info.race">
+            </div>
+            <div class="col-sm-3">
+                <label for="name">Class:</label>
+                <input class="form-control" id="name" ng-model="character.info.class">
+            </div>
+            <div class="col-sm-3">
+                <label for="name">Level:</label>
+                <input class="form-control" id="name" ng-model="character.info.level">
+            </div>
+            <div class="col-sm-3">
+                <label for="name">Speed:</label>
+                <input class="form-control" id="name" ng-model="character.info.speed">
+            </div>
+            <div class="col-sm-3">
+                <label for="name">Max Hit Points:</label>
+                <input class="form-control" id="name" ng-model="character.info.maxHp">
+            </div>
+            <div class="col-sm-3">
+                <label for="name">Current Hit Points:</label>
+                <input class="form-control" id="name" ng-model="character.info.currentHp">
+            </div>
+        </div>
+    </div>
+
+    <!--Stats-->
+    <div class="card">
+        <div class="row">
+            <div class="col-sm-2" ng-repeat="stat in character.stats">
+                <label for="name" ng-bind="stat.name + ':'"></label>
+                <div class="input-group">
+                    <input class="form-control" id="name" ng-model="stat.value" ng-change="calculateModifier(stat)">
+                    <span class="input-group-addon" id="basic-addon2" ng-bind="'+' + stat.modifier"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Stats Continued-->
+    <div class="card" id="skills">
+        <h4>Proficiencies:</h4>
+        <div class="row">
+            <div class="col-sm-4" ng-repeat="proficiency in proficiencies">
+                <span ng-bind="proficiency" ng-class="character.proficiencies.includes(proficiency) ? 'proficient' : ''"></span>
+            </div>
+        </div>
+    </div>
+
+    <!--Abilities-->
+    <div class="card">
+        <h4>Abilities:</h4>
+        <ul>
+            <li ng-repeat="ability in character.abilities">
+                <button type="button" class="btn btn-warning" ng-click="deleteItem(character.abilities, ability)">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+                <span ng-bind="item" contenteditable="true"></span>
+            </li>
+        </ul>
+        <button type="button" class="btn btn-success" ng-click="addItem(character.abilities)">
+            <i class="glyphicon glyphicon-plus"></i> 
+            Add
+        </button>
+    </div>
+
+    <!--Knowledge-->
+    <div class="card">
+        <h4>Knowledge:</h4>
+        <ul>
+            <li ng-repeat="item in character.knowledge">
+                <button type="button" class="btn btn-warning" ng-click="deleteItem(character.knowledge, item)">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+                <span ng-bind="item" contenteditable="true"></span>
+            </li>
+        </ul>
+        <button type="button" class="btn btn-success" ng-click="addItem(character.abilities)">
+            <i class="glyphicon glyphicon-plus"></i> 
+            Add
+        </button>
+    </div>
+</div>

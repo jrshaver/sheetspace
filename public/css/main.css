@@ -1,0 +1,115 @@
+body {
+    background: #1B1B1B;
+    margin: 0;
+    color: white;
+}
+
+.container {
+    margin-top: 85px;
+}
+
+.content .active {
+    display: block;
+}
+
+h1 {
+    font-family: ringbearer;
+}
+
+.card {
+    background: #343434;
+    padding: 15px;
+    margin: 25px 0;
+    font-size: 14px;
+}
+
+#notes textarea {
+    width: 100%;
+    height: -webkit-fill-available;
+    background: #343434;
+    border: 0;
+    -webkit-transition: height 1s ease;
+    -moz-transition: height 1s ease;
+    -ms-transition: height 1s ease;
+    -o-transition: height 1s ease;
+    transition: height 1s ease;
+}
+
+.card .row {
+    margin: 0px!important;
+}
+
+#info > .row > * {
+    margin-bottom: 5px;
+}
+
+.col-xs-6 {
+    padding: 10px;
+}
+
+h4 {
+    margin-top: 0;
+}
+
+label {
+    text-transform: capitalize;
+}
+
+#skills input, #skills label {
+    display: inline;
+}
+
+.proficient {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+ul .btn {
+    margin: 5px;
+}
+
+.btn {
+    margin: 10px 0;
+    padding: 2px 6px 1px 7px;
+}
+
+#inventory .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+#inventory .card .btn {
+    padding: inherit;
+    margin: initial;
+}
+
+.item-details {
+    width: -webkit-fill-available;
+    padding: 0 10px
+}
+
+.item-details h4 {
+    display: block;
+}
+
+#save button {
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+    border: 1px solid #000000;
+    border-bottom: 0;
+    padding: 10px 30px;
+    font-size: 18px;
+    background: #292929;
+    box-shadow: 0px 0px 20px #111111;
+}
+
+#save button:hover {
+    background: #454545;
+}

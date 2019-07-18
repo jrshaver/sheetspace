@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SheetSpaceApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SheetSpace</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/service.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav.css">
+
+</head>
+<body ng-controller="sheetSpaceController as main">
+    <div class="folder-tabs">
+        <a ng-repeat="section in main.sections track by $index"
+            ng-bind="section.title"
+            ng-click="select(section)"
+            ng-class="{active:section.selected}"
+            role="button" 
+            aria-expanded="false" 
+            aria-controls="{{section}}"
+            class="tab"></a>
+    </div>
+
+    <div class="container">
+        <ng-include ng-repeat="section in main.sections track by $index"
+                    ng-show="section.selected" 
+                    src="'templates/' + section.title + '.html'">
+        </ng-include>
+    </div>
+
+    <div id="save" ng-show="showSave">
+        <button ng-click="save()">Save</button>
+    </div>
+
+</body>
+</html>

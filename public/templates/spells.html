@@ -1,0 +1,41 @@
+<div class="section">
+    <!--Basic Info-->
+    <div class="card" id="cantrips">
+        <div ng-repeat="cantrip in character.cantrips">
+            <h4 ng-bind="cantrip.name"></h4>
+            <p ng-bind="cantrip.category"></p>
+            <p ng-bind="cantrip.description"></p>
+        </div>
+    </div>
+    <div class="card" id="spells">
+        <div ng-repeat="spell in character.spells" class="row">
+            <div class="col-sm-1" ng-show="spell.prepared">
+                Prepared
+            </div>
+            <div class="col">
+                <h4 ng-bind="spell.name"></h4>
+                <p ng-bind="spell.description"></p>
+                <p ng-bind="spell.category"></p>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label for="castTime">Cast Time: </label>
+                        <input class="form-control" id="castTime" ng-model="spell.castTime">
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="range">Range: </label>
+                        <input class="form-control" id="range" ng-model="spell.range">
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="components">Components: </label>
+                        <input class="form-control" id="components" ng-model="spell.components">
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="duration">Duration: </label>
+                        <input class="form-control" id="duration" ng-model="spell.duration">
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

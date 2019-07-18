@@ -1,0 +1,28 @@
+<div class="section" id="inventory">
+    <!--Basic Info-->
+    <div class="card" ng-repeat="item in character.inventory">
+        <button ng-hide="editing" type="button" class="btn btn-info" ng-click="editing=!editing">
+            <i class="glyphicon glyphicon-edit"></i>
+        </button>
+        <button ng-show="editing" type="button" class="btn btn-success" ng-click="editItem(character.inventory, item)">
+            <i class="glyphicon glyphicon-edit"></i>
+        </button>
+        <div class="item-details">
+            <h4 ng-bind="item.quantity + ' ' + item.name" ng-hide="editing"></h4>
+            <div ng-bind="item.description" ng-hide="editing"></div>
+            <div ng-show="editing">
+                <input ng-model="item.quantity" class="form-control">
+                <input ng-model="item.name" class="form-control">
+                <br>
+                <textarea ng-model="item.description" class="form-control"></textarea>
+            </div>
+        </div>
+        <button type="button" class="btn btn-warning" ng-click="deleteItem(character.inventory, item)">
+            <i class="glyphicon glyphicon-remove"></i>
+        </button>
+    </div>
+    <button type="button" class="btn btn-success" ng-click="addItem(character.inventory)">
+        <i class="glyphicon glyphicon-plus"></i> 
+        Add
+    </button>
+</div>
